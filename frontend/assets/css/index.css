@@ -1,0 +1,52 @@
+body {
+    text-align: center;
+    font-family: Ubuntu, 'sans-serif';
+    background: #c9c9c9;
+    color: white;
+}
+
+.logo {
+    width: 20%;
+}
+
+.greeting {
+    background: #326ce5;
+    border-top: white 3px solid;
+    border-bottom: white 3px solid;
+    width: 90%;
+    margin: 50px 5% 0 5%;
+    font-size: 50pt;
+}
+
+.node-overview {
+    width: 100%;
+    margin-top: 100px;
+}
+
+div.node-overview {
+    border: white solid 2px;
+    border-radius: 5px;
+    font-size: 22pt;
+}
+
+.node-overview > tbody >  tr > th {
+    width: 50%;
+    border: white solid 2px;
+    border-radius: 5px;
+    font-size: 32pt;
+}
+
+.node-overview > tbody >  tr > td {
+    width: 50%;
+    border: white solid 2px;
+    border-radius: 5px;
+    font-size: 22pt;
+}
+
+.node-info > tbody >  tr > th {
+    text-align: right;
+}
+
+.node-info > tbody >  tr > td {
+    text-align: left;
+}
