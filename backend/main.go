@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	http.HandleFunc("/info", getInfo)
+	http.HandleFunc("/system", getSystemInfo)
 	http.HandleFunc("/hello", helloWorld)
 	log.Println("Start serving on port 8080")
 	err := http.ListenAndServe(":8080", nil)
@@ -28,7 +28,7 @@ func helloWorld(w http.ResponseWriter, _ *http.Request) {
 	}
 }
 
-func getInfo(w http.ResponseWriter, _ *http.Request) {
+func getSystemInfo(w http.ResponseWriter, _ *http.Request) {
 	response, err := json.Marshal(common.GetData())
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)

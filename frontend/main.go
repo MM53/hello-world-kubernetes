@@ -73,7 +73,7 @@ func renderIndex(w http.ResponseWriter, _ *http.Request) {
 
 func loadBackendInfo(backendUrl string) map[string]string {
 
-	resp, err := http.Get("http://" + backendUrl + "/info")
+	resp, err := http.Get("http://" + backendUrl + "/system")
 	if err != nil {
 		log.Println(err)
 		return nil
