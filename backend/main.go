@@ -10,10 +10,20 @@ import (
 
 func main() {
 	http.HandleFunc("/info", getInfo)
+	http.HandleFunc("/hello", helloWorld)
 	log.Println("Start serving on port 8080")
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
 		fmt.Println(err)
+		return
+	}
+}
+
+func helloWorld(w http.ResponseWriter, _ *http.Request) {
+	_, err := w.Write([]byte("Hello world!"))
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		log.Println(err)
 		return
 	}
 }
