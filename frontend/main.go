@@ -41,7 +41,7 @@ func renderIndex(w http.ResponseWriter, _ *http.Request) {
 		data["backend"] = loadBackendInfo(backendUrl)
 	}
 
-	tmpl, err := template.ParseGlob(templateDir + "/default/*")
+	tmpl, err := template.ParseGlob(templateDir + "/default/*.html*")
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		log.Println(err)
@@ -55,7 +55,7 @@ func renderIndex(w http.ResponseWriter, _ *http.Request) {
 		return
 	}
 	if !noAdditionalTemplates {
-		tmpl, err = tmpl.ParseGlob(templateDir + "/additional/*")
+		tmpl, err = tmpl.ParseGlob(templateDir + "/additional/*.html*")
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)
 			log.Println(err)
